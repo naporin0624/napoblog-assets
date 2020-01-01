@@ -6,7 +6,7 @@ export const Router = () => {
   return (
     <BrowserRouter>
       <Switch>
-        <Route path="/">
+        <Route path="/list-transition">
           <ListTransition />
         </Route>
       </Switch>

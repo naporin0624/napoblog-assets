@@ -16,8 +16,8 @@ export const ListTransition = () => {
   return (
     <Fragment>
       <Container>
-        {state.map((s, idx) => (
-          <AnimationBox key={idx} unmountOnExit timeout={800} onClick={() => onRemove(s)}>
+        {state.map(s => (
+          <AnimationBox key={s} unmountOnExit timeout={800} onClick={() => onRemove(s)}>
             {s}
           </AnimationBox>
         ))}

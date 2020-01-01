@@ -1,0 +1,6 @@
+.env*
+dist
+.vscode
+*.log
+.python-version
+node_modules

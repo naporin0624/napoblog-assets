@@ -15,6 +15,7 @@
     "react-lottie": "^1.2.3",
     "react-router-dom": "^5.1.2",
     "react-transition-group": "^4.3.0",
+    "rimraf": "^3.0.0",
     "styled-components": "^4.4.1",
     "styled-transition-group": "^2.0.0",
     "ts-loader": "^6.2.1",
@@ -43,6 +44,6 @@
   },
   "scripts": {
     "start": "webpack-dev-server --config webpack.config.dev",
-    "build": "webpack --config webpack.config.prod"
+    "build": "rimraf dist && webpack --config webpack.config.prod"
   }
 }

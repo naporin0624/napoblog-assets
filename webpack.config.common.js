@@ -59,7 +59,7 @@ module.exports = {
   output: {
     filename: "js/[name]-[hash].js",
     path: join(__dirname, "docs"),
-    publicPath: "/",
+    publicPath: "",
   },
   plugins: [new Dotenv()],
 };

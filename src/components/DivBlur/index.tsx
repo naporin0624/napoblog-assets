@@ -16,6 +16,9 @@ export const DivBlur = () => {
   return (
     <Fragment>
       <Selector options={options} onChange={setValue} value={value} />
+      {[1, 2, 3, 4, 5, 6, 7, 8, 9, 10].map(n => (
+        <div key={n} style={{ height: "100px", width: "100px", background: "#c1c1c1", margin: "12px" }}></div>
+      ))}
     </Fragment>
   );
 };

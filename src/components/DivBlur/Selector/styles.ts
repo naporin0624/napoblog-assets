@@ -37,6 +37,7 @@ export const Menu = transition.div`
   position: absolute;
   top: 50px;
   z-index: 3;
+  background-color: white;
   width: 225px;
   min-height: 180px;
   max-height: 250px;

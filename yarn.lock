@@ -191,6 +191,13 @@
   dependencies:
     "@types/react" "*"
 
+"@types/react-lottie@^1.2.3":
+  version "1.2.3"
+  resolved "https://registry.yarnpkg.com/@types/react-lottie/-/react-lottie-1.2.3.tgz#aa25deecdc6d44e5d367662709c95121b7fe22ae"
+  integrity sha512-e1vOQ+poOGQwDAJkv8AIhXBOkUq9XctxUdFdbVsBIi2t9wgDrdjxUxnpzyy85XQNMwkRQF1VDDSyMN9whW2EVw==
+  dependencies:
+    "@types/react" "*"
+
 "@types/react-native@*":
   version "0.60.27"
   resolved "https://registry.yarnpkg.com/@types/react-native/-/react-native-0.60.27.tgz#d6313256f3cf9a685bd8885efddb86b85b9a4820"
@@ -3110,6 +3117,11 @@ loose-envify@^1.1.0, loose-envify@^1.2.0, loose-envify@^1.3.1, loose-envify@^1.4
   dependencies:
     js-tokens "^3.0.0 || ^4.0.0"
 
+lottie-web@^5.1.3, lottie-web@^5.5.10:
+  version "5.5.10"
+  resolved "https://registry.yarnpkg.com/lottie-web/-/lottie-web-5.5.10.tgz#7ca10af84a139cb1db772f686cc33ac101ece46d"
+  integrity sha512-8U/WSNKx4y3JdGq1lZh8Phuz/pQsiM6BGQ/rNFjLPGJSaKQ92VTVN7NAOHUsvV0bywsC+ShBWSVUhbuP3NV2tg==
+
 lower-case@^1.1.1:
   version "1.1.4"
   resolved "https://registry.yarnpkg.com/lower-case/-/lower-case-1.1.4.tgz#9a2cabd1b9e8e0ae993a4bf7d5875c39c42e8eac"
@@ -4065,6 +4077,14 @@ react-is@^16.6.0, react-is@^16.7.0, react-is@^16.8.1:
   version "16.12.0"
   resolved "https://registry.yarnpkg.com/react-is/-/react-is-16.12.0.tgz#2cc0fe0fba742d97fd527c42a13bec4eeb06241c"
   integrity sha512-rPCkf/mWBtKc97aLL9/txD8DZdemK0vkA3JMLShjlJB3Pj3s+lpf1KaBzMfQrAmhMQB0n1cU/SUGgKKBCe837Q==
+
+react-lottie@^1.2.3:
+  version "1.2.3"
+  resolved "https://registry.yarnpkg.com/react-lottie/-/react-lottie-1.2.3.tgz#8544b96939e088658072eea5e12d912cdaa3acc1"
+  integrity sha512-qLCERxUr8M+4mm1LU0Ruxw5Y5Fn/OmYkGfnA+JDM/dZb3oKwVAJCjwnjkj9TMHtzR2U6sMEUD3ZZ1RaHagM7kA==
+  dependencies:
+    babel-runtime "^6.26.0"
+    lottie-web "^5.1.3"
 
 react-router-dom@^5.1.2:
   version "5.1.2"

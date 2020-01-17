@@ -1,4 +1,4 @@
-import React, { useState, useCallback } from "react";
+import React, { useState, useCallback, useRef, useEffect, useMemo } from "react";
 import { Container, Button, Menu, OptionsGroup, Option } from "./styles";
 
 export interface OptionType {
@@ -11,6 +11,7 @@ interface Props {
   value?: OptionType;
   onChange?: (option: OptionType) => void;
 }
+
 export const Selector = (props: Props) => {
   const { options, value, onChange } = props;
   const [isFocus, setIsFocus] = useState(false);
@@ -22,10 +23,32 @@ export const Selector = (props: Props) => {
     [onChange],
   );
   const isActive = useCallback((option: OptionType) => option.value === value?.value, [value]);
+  const buttonLabel = useMemo(() => value?.label || "click", [value]);
+
+  const ref = useRef<HTMLDivElement>(null);
+  useEffect(() => {
+    const handler = (e: Event) => {
+      // Blurを制御したい親Elementのselector(クラス)を作る
+      const selector = ref.current?.className
+        .split(" ")
+        .map(s => `.${s}`)
+        .join();
+
+      // eはクリックしたところから発火されるイベント
+      // eをclosestで比較し,eの親にrefが含まれるか確認する
+      const blur = !(e.target as HTMLElement).closest(selector || "");
+
+      // 親にrefが含まれていなければフォーカスを外す
+      if (blur) setIsFocus(false);
+    };
+
+    document.addEventListener("click", handler);
+    return () => document.addEventListener("click", handler);
+  }, []);
 
   return (
-    <Container>
-      <Button onClick={() => setIsFocus(f => !f)}>{value?.label || "click"}</Button>
+    <Container ref={ref}>
+      <Button onClick={() => setIsFocus(f => !f)}>{buttonLabel}</Button>
       <Menu unmountOnExit timeout={300} in={isFocus}>
         <OptionsGroup>
           {options.map(option => (

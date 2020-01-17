@@ -3,6 +3,7 @@ import transition from "styled-transition-group";
 
 export const Container = styled.div`
   position: relative;
+  width: 128px;
 `;
 
 export const Button = styled.div`

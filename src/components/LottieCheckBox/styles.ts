@@ -18,3 +18,7 @@ export const CheckBoxContainer = transition.div`
     transition: all 0.3s ease-out;
   }
 `;
+
+export const Flex = styled.div`
+  display: flex;
+`;

@@ -1,6 +1,7 @@
 import React, { Fragment, useState } from "react";
-import { CheckBoxContainer } from "./styles";
+import { CheckBoxContainer, Flex } from "./styles";
 import { CheckBox } from "./CheckBox";
+import { CheckBoxBug } from "./CheckBoxBug/index";
 
 export const LottieCheckBox = () => {
   const [checked, setChecked] = useState<boolean>(false);
@@ -10,9 +11,10 @@ export const LottieCheckBox = () => {
     <Fragment>
       <button onClick={() => setOpen(!open)}>push!</button>
       <CheckBoxContainer timeout={300} unmountOnExit in={open}>
-        <div onClick={() => setChecked(!checked)}>
+        <Flex onClick={() => setChecked(!checked)}>
           <CheckBox checked={checked} />
-        </div>
+          <CheckBoxBug checked={checked} />
+        </Flex>
       </CheckBoxContainer>
     </Fragment>
   );

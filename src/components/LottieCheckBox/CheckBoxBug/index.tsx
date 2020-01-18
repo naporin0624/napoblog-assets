@@ -1,6 +1,6 @@
 import React, { useRef, useEffect } from "react";
 import Lottie from "react-lottie";
-import checkbox from "./checkbox1.json";
+import checkbox from "./checkbox.json";
 import { AnimationItem } from "lottie-web";
 
 interface LottieType extends Lottie {
@@ -17,11 +17,17 @@ const options = {
     preserveAspectRatio: "xMidYMid slice",
   },
 };
-export const CheckBox = (props: Props) => {
+export const CheckBoxBug = (props: Props) => {
   const { checked } = props;
   const ref = useRef<LottieType>(null);
   const prev = useRef<boolean>();
 
+  useEffect(() => {
+    ref.current?.anim.playSegments([30, 75], true);
+    ref.current?.anim.stop();
+
+    return () => ref.current?.anim.destroy();
+  }, []);
   useEffect(() => {
     if (prev.current === undefined) {
       prev.current = checked;

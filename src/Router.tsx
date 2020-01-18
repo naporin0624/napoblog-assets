@@ -1,12 +1,12 @@
 import React from "react";
-import { BrowserRouter, Switch, Route } from "react-router-dom";
+import { Switch, Route, HashRouter } from "react-router-dom";
 import { ListTransition } from "./components/ListTransition";
 import { LottieCheckBox } from "./components/LottieCheckBox";
 import { DivBlur } from "./components/DivBlur";
 
 export const Router = () => {
   return (
-    <BrowserRouter>
+    <HashRouter>
       <Switch>
         <Route path="/div-blur">
           <DivBlur />
@@ -18,6 +18,6 @@ export const Router = () => {
           <LottieCheckBox />
         </Route>
       </Switch>
-    </BrowserRouter>
+    </HashRouter>
   );
 };

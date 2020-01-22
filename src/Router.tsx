@@ -3,12 +3,16 @@ import { Switch, Route, HashRouter } from "react-router-dom";
 import { ListTransition } from "./components/ListTransition";
 import { LottieCheckBox } from "./components/LottieCheckBox";
 import { DivBlur } from "./components/DivBlur";
+import { SwipeObjectAnimation } from "./components/SwipeObjectAnimation";
 import { NotFoundView } from "./views/404";
 
 export const Router = () => {
   return (
     <HashRouter>
       <Switch>
+        <Route path="/swipe-object-animation">
+          <SwipeObjectAnimation />
+        </Route>
         <Route path="/div-blur">
           <DivBlur />
         </Route>

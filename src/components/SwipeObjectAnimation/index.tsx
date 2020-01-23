@@ -19,6 +19,17 @@ export const SwipeObjectAnimation = () => {
   }, []);
 
   const releaseBox = useCallback(() => {
+    if (!targetDragElement.current) return;
+
+    const style = targetDragElement.current.style;
+    let top = posToNum(style.top);
+    let left = posToNum(style.left);
+    top = top > 275 ? 275 : top;
+    top = top < 25 ? 25 : top;
+    left = left > 275 ? 275 : left;
+    left = left < 25 ? 25 : left;
+    style.top = `${top}px`;
+    style.left = `${left}px`;
     targetDragElement.current = null;
   }, []);
 
@@ -27,12 +38,8 @@ export const SwipeObjectAnimation = () => {
       if (!targetDragElement.current) return;
       const style = targetDragElement.current.style;
 
-      let posY = posToNum(style.top) + e.movementY;
-      posY = posY > 275 ? 275 : posY;
-      posY = posY < 25 ? 25 : posY;
-      let posX = posToNum(style.left) + e.movementX;
-      posX = posX > 275 ? 275 : posX;
-      posX = posX < 25 ? 25 : posX;
+      const posY = posToNum(style.top) + e.movementY;
+      const posX = posToNum(style.left) + e.movementX;
 
       targetDragElement.current.style.top = `${posY}px`;
       targetDragElement.current.style.left = `${posX}px`;
@@ -43,15 +50,9 @@ export const SwipeObjectAnimation = () => {
   return (
     <Fragment>
       <Button onClick={() => setBoxCount(c => c + 1)}>押すとボックスが増えるよ</Button>
-      <Container ref={parentBoxElement}>
+      <Container ref={parentBoxElement} onMouseMove={movingBox} onMouseUp={releaseBox}>
         {cardNum.map(n => (
-          <Box
-            key={n}
-            style={{ top: "25px", left: "25px" }}
-            onMouseDown={dragBox}
-            onMouseUp={releaseBox}
-            onMouseMove={movingBox}
-          />
+          <Box key={n} style={{ top: "25px", left: "25px" }} onMouseDown={dragBox} onMouseUp={releaseBox} />
         ))}
       </Container>
     </Fragment>

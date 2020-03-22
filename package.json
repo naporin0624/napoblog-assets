@@ -39,12 +39,14 @@
     "eslint-config-prettier": "^6.9.0",
     "eslint-plugin-prettier": "^3.1.2",
     "eslint-plugin-react": "^7.17.0",
+    "eslint-plugin-react-hooks": "^2.5.1",
     "prettier": "^1.19.1",
     "source-map-loader": "^0.2.4",
     "webpack-dev-server": "^3.10.1"
   },
   "scripts": {
     "start": "webpack-dev-server --config webpack.config.dev",
-    "build": "rimraf docs && webpack --config webpack.config.prod"
+    "build": "rimraf docs && webpack --config webpack.config.prod",
+    "lint": "eslint --ext .ts,.tsx,.js,.jsx src"
   }
 }

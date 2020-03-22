@@ -17,7 +17,7 @@
     "react-transition-group": "^4.3.0",
     "react-use": "^13.21.0",
     "rimraf": "^3.0.0",
-    "styled-components": "^4.4.1",
+    "styled-components": "^5.0.1",
     "styled-transition-group": "^2.0.0",
     "ts-loader": "^6.2.1",
     "typescript": "^3.7.4",

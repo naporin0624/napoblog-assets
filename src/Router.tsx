@@ -4,12 +4,16 @@ import { ListTransition } from "./components/ListTransition";
 import { LottieCheckBox } from "./components/LottieCheckBox";
 import { DivBlur } from "./components/DivBlur";
 import { SwipeObjectAnimation } from "./components/SwipeObjectAnimation";
+import { VectaryDemo } from "./components/vectary-demo/";
 import { NotFoundView } from "./views/404";
 
 export const Router = () => {
   return (
     <HashRouter>
       <Switch>
+        <Route path="/vectary-demo">
+          <VectaryDemo />
+        </Route>
         <Route path="/swipe-object-animation">
           <SwipeObjectAnimation />
         </Route>

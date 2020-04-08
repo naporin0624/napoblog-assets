@@ -45,8 +45,9 @@
     "webpack-dev-server": "^3.10.1"
   },
   "scripts": {
-    "start": "webpack-dev-server --config webpack.config.dev",
-    "build": "rimraf docs && webpack --config webpack.config.prod",
+    "prebuild": "rimraf docs",
+    "build": "webpack --config webpack.config.prod",
+    "postbuild": "git add . && git commit -m \":wrench: build\" && git push",
     "lint": "eslint --ext .ts,.tsx,.js,.jsx src"
   }
 }

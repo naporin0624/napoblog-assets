@@ -11,7 +11,7 @@ export const SwipeObjectAnimation = () => {
     for (let i = 0; i < n; i++) arr.push(i);
     return arr;
   }, []);
-  const cardNum = useMemo(() => makeArr(boxCount), [boxCount]);
+  const cardNum = useMemo(() => makeArr(boxCount), [boxCount, makeArr]);
 
   const dragBox = useCallback((e: React.MouseEvent<HTMLDivElement, MouseEvent>) => {
     const el = e.target as HTMLDivElement;
@@ -44,7 +44,7 @@ export const SwipeObjectAnimation = () => {
       targetDragElement.current.style.top = `${posY}px`;
       targetDragElement.current.style.left = `${posX}px`;
     },
-    [targetDragElement],
+    [posToNum],
   );
 
   return (

@@ -7,11 +7,15 @@ import { SwipeObjectAnimation } from "./components/SwipeObjectAnimation";
 import { VectaryDemo } from "./components/vectary-demo/";
 import { AntTabDemo } from "./views/AntTabDemo/";
 import { NotFoundView } from "./views/404";
+import { TabUI } from "./views/TabUI";
 
 export const Router = () => {
   return (
     <HashRouter>
       <Switch>
+        <Route path="/tab">
+          <TabUI />
+        </Route>
         <Route path="/ant-tab-demo">
           <AntTabDemo />
         </Route>

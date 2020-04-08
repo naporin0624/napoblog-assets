@@ -5,12 +5,16 @@ import { LottieCheckBox } from "./components/LottieCheckBox";
 import { DivBlur } from "./components/DivBlur";
 import { SwipeObjectAnimation } from "./components/SwipeObjectAnimation";
 import { VectaryDemo } from "./components/vectary-demo/";
+import { AntTabDemo } from "./views/AntTabDemo/";
 import { NotFoundView } from "./views/404";
 
 export const Router = () => {
   return (
     <HashRouter>
       <Switch>
+        <Route path="/ant-tab-demo">
+          <AntTabDemo />
+        </Route>
         <Route path="/vectary-demo">
           <VectaryDemo />
         </Route>

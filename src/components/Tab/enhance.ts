@@ -9,11 +9,11 @@ export function useEnhance(props: Props) {
   const { children } = props;
 
   const [activeIndex, setActiveIndex] = useState(0);
-  const [childrenOrder, setChildrenOrder] = useState(children);
+  const [childrenOrder] = useState(children);
 
   const tabNames = useMemo(
     () => childrenOrder.map((child, idx) => (child.props["data-tab"] as string) || `tab${idx}`),
-    [children],
+    [childrenOrder],
   );
   const activeTabBody = useMemo(() => children[activeIndex], [children, activeIndex]);
 

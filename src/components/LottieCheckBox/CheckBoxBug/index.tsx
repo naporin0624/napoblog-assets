@@ -26,6 +26,7 @@ export const CheckBoxBug = (props: Props) => {
     ref.current?.anim.playSegments([30, 75], true);
     ref.current?.anim.stop();
 
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     return () => ref.current?.anim.destroy();
   }, []);
   useEffect(() => {

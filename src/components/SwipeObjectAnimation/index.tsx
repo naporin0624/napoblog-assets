@@ -31,7 +31,7 @@ export const SwipeObjectAnimation = () => {
     style.top = `${top}px`;
     style.left = `${left}px`;
     targetDragElement.current = null;
-  }, []);
+  }, [posToNum]);
 
   const movingBox = useCallback(
     (e: React.MouseEvent<HTMLDivElement, MouseEvent>) => {

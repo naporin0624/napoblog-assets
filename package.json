@@ -47,7 +47,7 @@
   "scripts": {
     "prebuild": "rimraf docs",
     "build": "webpack --config webpack.config.prod",
-    "postbuild": "git add . && git commit -m \":wrench: build\"",
+    "postbuild": "git add . && git commit -m \":wrench: build\" && git push",
     "lint": "eslint --ext .ts,.tsx,.js,.jsx src"
   }
 }

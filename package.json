@@ -48,6 +48,7 @@
     "prebuild": "rimraf docs",
     "build": "webpack --config webpack.config.prod",
     "postbuild": "git add . && git commit -m \":wrench: build\" && git push",
-    "lint": "eslint --ext .ts,.tsx,.js,.jsx src"
+    "lint": "eslint --ext .ts,.tsx,.js,.jsx src",
+    "start": "webpack-dev-server --config webpack.config.dev.js"
   }
 }

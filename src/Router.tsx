@@ -9,12 +9,20 @@ import { AntTabDemo } from "./views/AntTabDemo/";
 import { NotFoundView } from "./views/404";
 import { TabUI } from "./views/TabUI";
 import { GlitchDemo } from "./views/Glitch";
+import { GlitchId } from "./views/GlitchInput/_id";
+import { GlitchCustom } from "./views/GlitchInput";
 
 export const Router = () => {
   return (
     <HashRouter>
       <Switch>
-        <Route path="/glitch">
+        <Route path="/glitch-custom">
+          <GlitchCustom />
+        </Route>
+        <Route path="/glitch/:id">
+          <GlitchId />
+        </Route>
+        <Route path="/glitch" exact>
           <GlitchDemo />
         </Route>
         <Route path="/tab">

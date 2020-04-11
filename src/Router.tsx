@@ -8,11 +8,15 @@ import { VectaryDemo } from "./components/vectary-demo/";
 import { AntTabDemo } from "./views/AntTabDemo/";
 import { NotFoundView } from "./views/404";
 import { TabUI } from "./views/TabUI";
+import { GlitchDemo } from "./views/Glitch";
 
 export const Router = () => {
   return (
     <HashRouter>
       <Switch>
+        <Route path="/glitch">
+          <GlitchDemo />
+        </Route>
         <Route path="/tab">
           <TabUI />
         </Route>

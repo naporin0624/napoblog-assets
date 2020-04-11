@@ -57,6 +57,9 @@ export const Text = styled.p<{ color?: string }>`
   padding: 0;
   font-size: 64px;
   font-weight: 600;
+  @media screen and (max-width: 480px) {
+    font-size: 32px;
+  }
   color: ${props => props.color || "#000"};
 `;
 

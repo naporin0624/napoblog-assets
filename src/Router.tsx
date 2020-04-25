@@ -11,11 +11,23 @@ import { TabUI } from "./views/TabUI";
 import { GlitchDemo } from "./views/Glitch";
 import { GlitchId } from "./views/GlitchInput/_id";
 import { GlitchCustom } from "./views/GlitchInput";
+import { OpeningAnimationDemo } from "./views/OpeningAnimation";
+import { TitleAnimation } from "./views/TitleAnimation";
+import { StartEndArrowDemo } from "./views/StartEndArrowDemo";
 
 export const Router = () => {
   return (
     <HashRouter>
       <Switch>
+        <Route path="/start-end-arrow-demo">
+          <StartEndArrowDemo />
+        </Route>
+        <Route path="/title-animation">
+          <TitleAnimation />
+        </Route>
+        <Route path="/opening-animation">
+          <OpeningAnimationDemo />
+        </Route>
         <Route path="/glitch-custom">
           <GlitchCustom />
         </Route>

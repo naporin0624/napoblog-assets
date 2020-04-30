@@ -31,18 +31,16 @@ export function useEnhance(props: Props) {
     theta,
   ]);
 
-  const x = useMemo(() => (end.x - start.x - l) / 2, [end.x, l, start.x]);
-  const y = useMemo(() => (end.y - start.y) / 2, [end.y, start.y]);
-
   const style = useMemo<CSSProperties>(
     () => ({
       width: l,
       height,
       top: start.y - height / 2,
       left: start.x,
-      transform: `translate(${x}px, ${y}px) rotate(${theta}rad)`,
+      transformOrigin: "left",
+      transform: `rotate(${theta}rad)`,
     }),
-    [l, start.y, start.x, height, x, y, theta],
+    [l, start.y, start.x, height, theta],
   );
 
   return { style };

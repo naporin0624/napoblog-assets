@@ -14,7 +14,6 @@ function isIntersection(l1: Line, l2: Line) {
 }
 
 export function main(container: HTMLElement) {
-  console.log(document.body.clientHeight, document.body.clientWidth);
   const app = new PIXI.Application({
     transparent: true,
     antialias: true,
@@ -38,7 +37,7 @@ export function main(container: HTMLElement) {
   let velocity = 20;
 
   app.ticker.add(() => {
-    velocity += 0.0001;
+    velocity += 0.01;
     graphics.clear();
 
     // mouseに追従する棒

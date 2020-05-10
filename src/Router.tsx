@@ -14,11 +14,15 @@ import { GlitchCustom } from "./views/GlitchInput";
 import { OpeningAnimationDemo } from "./views/OpeningAnimation";
 import { TitleAnimation } from "./views/TitleAnimation";
 import { StartEndArrowDemo } from "./views/StartEndArrowDemo";
+import { BallReflection } from "./views/BallReflection";
 
 export const Router = () => {
   return (
     <HashRouter>
       <Switch>
+        <Route path="/ball-reflection">
+          <BallReflection />
+        </Route>
         <Route path="/start-end-arrow-demo">
           <StartEndArrowDemo />
         </Route>
